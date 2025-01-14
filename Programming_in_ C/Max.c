@@ -25,6 +25,6 @@ int main()
             max =a[i];
         }
     }
-    printf("Largest element = %d", a[0]);
+    printf("Largest element = %d", a[i]);
     return 0;
 }
