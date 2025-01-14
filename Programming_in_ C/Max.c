@@ -13,7 +13,7 @@ int main()
     }
      for (i = 0; i < n; ++i)
     {
-        printf("a[%d] = %d : ", i, a[i]);
+        printf("\n a[%d] = %d : ", i, a[i]);
     }
     max = a[0];
 
