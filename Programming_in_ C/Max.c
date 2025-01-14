@@ -6,12 +6,12 @@ int main()
     scanf("%d", &n);
     printf("\n");
     // Store number entered by the user
-    for (i = 0; i < n; ++i)
+    for (i = 0; i < n; i++)
     {
         printf("Enter a[%d] : ", i);
         scanf("%d", &a[i]);
     }
-     for (i = 0; i < n; ++i)
+     for (i = 0; i < n; i++)
     {
         printf("\n a[%d] = %d : ", i, a[i]);
     }
