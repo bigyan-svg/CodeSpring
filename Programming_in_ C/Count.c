@@ -7,6 +7,15 @@ goto statement After that do the following:
 */
 #include <stdio.h>
 #include <math.h>
+
+int is_prime(int num) {
+    if (num <= 1) return 0;
+    for (int i = 2; i <= sqrt(num); i++) {
+        if (num % i == 0) return 0;
+    }
+    return 1;
+}
+
 int main() {
     int num, sum = 0, r, i, j, f1 = 0, f2 = 1, f3;
     printf("Enter a number: ");
@@ -33,30 +42,29 @@ int main() {
             j = f3;
         }
         printf("\n");
-    } else {
-        for (i = 2; i <= r / 2; i++) {
-            if (r % i == 0) {
-                printf("%d is composite\n", r);
-                f1 = 0;
-                f2 = 1;
-                printf("Fibonacci series: ");
-                printf("%d %d ", f1, f2);
-                for (int k = 2; k < r - 1; k++) {
-                    f3 = f1 + f2;
-                    printf("%d ", f3);
-                    f1 = f2;
-                    f2 = f3;
-                }
-                printf("\n");
-                goto end;
-            }
-        }
+        goto end;
+    }
+
+    if (is_prime(r)) {
         printf("%d is prime\n", r);
         f1 = 0;
         f2 = 1;
         printf("Fibonacci series: ");
         printf("%d %d ", f1, f2);
-        for (int k = 2; k < r + 1; k++) {
+        for (int k = 2; k <= r + 1; k++) {
+            f3 = f1 + f2;
+            printf("%d ", f3);
+            f1 = f2;
+            f2 = f3;
+        }
+        printf("\n");
+    } else {
+        printf("%d is composite\n", r);
+        f1 = 0;
+        f2 = 1;
+        printf("Fibonacci series: ");
+        printf("%d %d ", f1, f2);
+        for (int k = 2; k < r; k++) {
             f3 = f1 + f2;
             printf("%d ", f3);
             f1 = f2;
@@ -64,6 +72,7 @@ int main() {
         }
         printf("\n");
     }
-    end:
+
+end:
     return 0;
 }
