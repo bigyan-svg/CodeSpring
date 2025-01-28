@@ -10,11 +10,9 @@ int main()
     int a[100], n;
     printf("Enter the number of elements in the array: ");
     scanf("%d", &n);
-    
     input(a, n);
     output(a, n);
     reverse(a, n);
-    
     return 0;
 }
 
