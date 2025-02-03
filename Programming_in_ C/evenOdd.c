@@ -13,10 +13,6 @@ int main()
     printf("\nThe array elements are: ");
     display(arr, n);
     copy(arr, n, oar, ear);
-    printf("\nThe odd array elements are: ");
-    display(oar, n);
-    printf("\nThe even array elements are: ");
-    display(ear, n);
     return 0;
 }
 void input(int arr[100], int n)
