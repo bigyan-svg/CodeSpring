@@ -53,9 +53,9 @@ void copy(int arr[100], int n, int oar[100], int ear[100])
         }
     }
     printf("\nThe odd array elements are: ");
-    display(oar, n);
+    display(oar, k);
     printf("\nThe even array elements are: ");
-    display(ear, n);
+    display(ear, j);
 }
 //output
 // Enter the number of elements: 5
