@@ -1,5 +1,7 @@
 //WAP to chck whether the given string is palindrome or not using function and function prototype
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 void input(char str[100]);
 void check(char str[100]);
 int main()
@@ -12,7 +14,7 @@ int main()
 void input(char str[100])
 {
     printf("Enter a string: ");
-    gets(str);
+    scanf("%s", str);
 }
 void check(char str[100])
 {
