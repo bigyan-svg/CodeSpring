@@ -16,7 +16,7 @@ int main()
         printf("enter telement %d:", i+1);
         scanf("%d", ptr+i);
     }
-    printf("the elements of the array are:");|
+    printf("the elements of the array are:");
     for(i = 0; i<n; i++)
     {
         printf("%d\n", *(ptr+i));
