@@ -1,5 +1,8 @@
 {
     "files.associations": {
         "DMA1.C": "cpp"
-    }
+    },
+    "cSpell.words": [
+        "esum"
+    ]
 }
