@@ -35,5 +35,5 @@
 //     void sum()
 //     {
 //         cout << "\nThe sum of glo and 5 is " << glo + 5; //using scope resolution operator to access global variable glo
-//     } 
+//     }
 
