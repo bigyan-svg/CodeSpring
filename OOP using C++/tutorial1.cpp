@@ -37,3 +37,16 @@
 //         cout << "\nThe sum of glo and 5 is " << glo + 5; //using scope resolution operator to access global variable glo
 //     }
 
+//Basic input/output and more in C++
+#include<iostream>
+using namespace std;
+int main()
+{
+    int num1, num2;
+    cout << "Enter the value of num1:" << endl;
+    cin >> num1; //taking input from user
+    cout << "Enter the value of num2:" << endl;
+    cin >> num2; //taking input from user
+    cout << "The sum of "<<num1<<" and "<<num2<<" is:" << num1 + num2; //printing the sum of num1 and num2
+    return 0;
+}
