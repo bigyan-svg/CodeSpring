@@ -38,15 +38,27 @@
 //     }
 
 //Basic input/output and more in C++
-#include<iostream>
+// #include<iostream>
+// using namespace std;
+// int main()
+// {
+//     int num1, num2;
+//     cout << "Enter the value of num1:" << endl;
+//     cin >> num1; //taking input from user
+//     cout << "Enter the value of num2:" << endl;
+//     cin >> num2; //taking input from user
+//     cout << "The sum of "<<num1<<" and "<<num2<<" is:" << num1 + num2; //printing the sum of num1 and num2
+//     return 0;
+// }
+
+//C++ Header files and operators
+#include<iostream> //this is system header fild
+#include"this.h"  //this is user defined header file
 using namespace std;
+
 int main()
 {
-    int num1, num2;
-    cout << "Enter the value of num1:" << endl;
-    cin >> num1; //taking input from user
-    cout << "Enter the value of num2:" << endl;
-    cin >> num2; //taking input from user
-    cout << "The sum of "<<num1<<" and "<<num2<<" is:" << num1 + num2; //printing the sum of num1 and num2
+    
+    cout<< "this is hello world program"<<endl;
     return 0;
 }
