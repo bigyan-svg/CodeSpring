@@ -1,4 +1,4 @@
-//wap to dispaly the sum of two rational number in the form of p/q
+//wap to display the sum of two rational number in the form of p/q
 //where p and q are integers
 #include <iostream>
 using namespace std;
