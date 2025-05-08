@@ -1,0 +1,231 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fafafa;
+  color: #222;
+}
+
+header {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #5a189a;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #5a189a;
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+  color: #fff;
+}
+
+.hero img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  background: #5a189a;
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background: #9d4edd;
+}
+
+.latest-vlogs {
+  padding: 2rem;
+  background: #fff;
+}
+
+.latest-vlogs h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.vlog-cards {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.vlog-card {
+  background: #f3f0ff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(90,24,154,0.07);
+  padding: 1rem;
+  width: 250px;
+  text-align: center;
+}
+
+.vlog-card img {
+  width: 100%;
+  border-radius: 10px;
+  height: 140px;
+  object-fit: cover;
+}
+
+.vlog-card h3 {
+  margin: 1rem 0 0.5rem 0;
+}
+
+.about-me {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  background: #fff;
+  max-width: 800px;
+  margin: 2rem auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(90,24,154,0.07);
+}
+
+.about-me img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.categories {
+  padding: 2rem;
+  background: #f3f0ff;
+  text-align: center;
+}
+
+.category-list {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.category {
+  background: #fff;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(90,24,154,0.07);
+}
+
+.social-feed {
+  padding: 2rem;
+  text-align: center;
+  background: #fff;
+}
+
+.newsletter {
+  padding: 2rem;
+  background: #f3f0ff;
+  text-align: center;
+}
+
+.newsletter form {
+  margin-top: 1rem;
+}
+
+.newsletter input[type="email"] {
+  padding: 0.7rem;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  width: 220px;
+  margin-right: 0.5rem;
+}
+
+.newsletter button {
+  padding: 0.7rem 1.5rem;
+  border-radius: 20px;
+  border: none;
+  background: #5a189a;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.newsletter button:hover {
+  background: #9d4edd;
+}
+
+footer {
+  background: #fff;
+  text-align: center;
+  padding: 1.5rem 0 1rem 0;
+  margin-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+.social-links a {
+  color: #5a189a;
+  margin: 0 0.5rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .about-me {
+    flex-direction: column;
+    text-align: center;
+  }
+  .vlog-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .category-list {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
