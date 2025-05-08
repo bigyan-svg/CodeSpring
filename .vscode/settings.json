@@ -3,7 +3,9 @@
     "DMA1.C": "cpp"
   },
   "cSpell.words": [
-    "esum"
+    "allowtransparency",
+    "esum",
+    "iframeiframe"
   ],
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",
