@@ -66,12 +66,15 @@ app.get('/edit/:id', requireLogin, async (req, res) => {
   res.render('edit', { article });
 });
 
-app.post('/edit/:id?', requireLogin, async (req, res) => {
-  if (req.params.id) {
-    await Article.findByIdAndUpdate(req.params.id, { title: req.body.title, content: req.body.content });
-  } else {
-    await Article.create({ title: req.body.title, content: req.body.content });
-  }
+// Create new article
+app.post('/edit', requireLogin, async (req, res) => {
+  await Article.create({ title: req.body.title, content: req.body.content });
+  res.redirect('/dashboard');
+});
+
+// Update existing article
+app.post('/edit/:id', requireLogin, async (req, res) => {
+  await Article.findByIdAndUpdate(req.params.id, { title: req.body.title, content: req.body.content });
   res.redirect('/dashboard');
 });
 
