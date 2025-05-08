@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>Dashboard</title></head>
+<body>
+  <h2>Dashboard</h2>
+  <a href="/edit">New Article</a> | <a href="/logout">Logout</a>
+  <ul>
+    <% articles.forEach(article => { %>
+      <li>
+        <strong><%= article.title %></strong>
+        <a href="/edit/<%= article._id %>">Edit</a>
+        <form action="/delete/<%= article._id %>" method="POST" style="display:inline;">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>
