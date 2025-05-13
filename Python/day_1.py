@@ -1,3 +1,5 @@
+import math  # Import math module at the top
+
 print("Hello World!")
 print(2+2)
 print(9) #this is because 09 is not a valid integer literal in Python
@@ -54,7 +56,6 @@ print(x*y) # this does not give a syntax error, because we are using x and y as 
 
 
 # 1. The volume of a sphere with radius r is given by the formula V = 4/3 * pi * r^3. What is the volume of a sphere with radius 5?
-import math
 radius = 5
 volume = (4/3) * math.pi * (radius*radius*radius)
 print("The volume of a sphere with radius ", radius, "is ", volume)
@@ -109,7 +110,6 @@ print(type(str(32))) # this will give <class 'str'> because we are converting an
 print(str(32)) # this will give '32' because we are converting an integer to a string
 
 
-import math
 signal_power = 10  # Example value for signal power
 noise_power = 2    # Example value for noise power
 ratio  = signal_power // noise_power 
@@ -127,9 +127,12 @@ print(math.sin(radian)) # this will give the value of sin in terms of radian
 print(math.sqrt(2)/2)
 
 #user defined function
-def print_lyrics():     # function header rest of the code is function body
+def print_lyrics():     # function header, rest of the code is function body
     print("I'm a lumberjack, and I'm okay.")
     print("I sleep all night and I work all day.")
     print("He's a lumberjack, and he's okay.")
     print("He sleeps all night and he works all day.")
     print(type(print_lyrics)) # this will give the type of print_lyrics in terms of its type
+
+# Call the function to see its output
+print_lyrics()
