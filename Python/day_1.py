@@ -29,3 +29,13 @@ print("Average pace in minutes:", average_pace_minutes, "\nAverage pace in secon
 # now we need to calculate the average speed in miles per hour
 average_speed_mph = miles / (total_seconds / 3600)
 print("Average speed in miles per hour:", average_speed_mph)
+
+# ORDER OF OPERATIONS USING PEDMAS RULE WHERE P = PARENTHESES, E = EXPONENTS, D = DIVISION, M = MULTIPLICATION, A = ADDITION, S = SUBTRACTION
+print((1+1)**(5-2)) # this is the same as (1+1)^(5-2) = 2^3 = 8 # parentheses has the highest precedence
+print(1+2**3) # exponent has the next highest precedence ,this is the same as 1+2^3 = 1+8 = 9, here we do not use ^ is is used as bitwise XOR operator in python
+print(1+2*3, 6+4//2) # multiplication and division has(same) the next highest precedence, this is the same as 1+2*3 = 1+6 = 7 , operators are evaluated from left to right
+print(1+2-3) # addition and subtraction has the same precedence, this is the same as 1+2-3 = 3-3 = 0, operators are evaluated from left to right
+
+#string operations
+print("Hello "+"World") # this is the same as "Hello "+" "+"World" = "Hello World"
+print("Spam "*3) # this is the same as "Spam "+"Spam "+"Spam " = "Spam Spam Spam"

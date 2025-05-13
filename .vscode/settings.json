@@ -6,6 +6,7 @@
     "allowtransparency",
     "esum",
     "iframeiframe",
+    "PEDMAS",
     "Sanjyal"
   ],
   "C_Cpp_Runner.cCompilerPath": "gcc",
