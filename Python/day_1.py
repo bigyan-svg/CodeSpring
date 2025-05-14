@@ -161,6 +161,40 @@ def do_four(f, value):
 do_four(print_twice, 'Spam')
 
 
+# Write a function that draws the grid like following
+# +----------------+----------------+
+# |                |                |
+# |                |                |
+# |                |                |
+# |                |                |
+# |                |                |
+# +----------------+----------------+
+# |                |                |
+# |                |                |
+# |                |                |
+# |                |                |
+# |                |                |
+# +----------------+----------------+
+
+def draw_grid():
+    print("+----------------+----------------+")
+    for i in range(5):
+        print("|                |                |")
+    print("+----------------+----------------+")
+    for i in range(5):
+        print("|                |                |")
+    print("+----------------+----------------+")
+draw_grid()
+
+
+
+# write a function that draws similar grid with 4 rows and 4 columns
+def draw_grid_4x4():
+    for i in range(4):
+        print("+----+----+----+----+")
+        print("|    |    |    |    |")
+    print("+----+----+----+----+")
+draw_grid_4x4()
 
 
 
