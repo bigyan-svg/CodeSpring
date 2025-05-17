@@ -31,8 +31,76 @@
 #  Solution:
 #  https://thinkpython.com/code/flower.py, also requires https:
 #  //thinkpython.com/code/polygon.py.
-"""This module contains a code example related to
+# """This module contains a code example related to
 
+# Think Python, 2nd Edition
+# by Allen Downey
+# http://thinkpython2.com
+
+# Copyright 2015 Allen Downey
+
+# License: http://creativecommons.org/licenses/by/4.0/
+# """
+
+# from __future__ import print_function, division
+
+# import turtle
+
+# from polygon import arc
+
+
+# def petal(t, r, angle):
+#     """Draws a petal using two arcs.
+
+#     t: Turtle
+#     r: radius of the arcs
+#     angle: angle (degrees) that subtends the arcs
+#     """
+#     for i in range(2):
+#         arc(t, r, angle)
+#         t.lt(180-angle)
+
+
+# def flower(t, n, r, angle):
+#     """Draws a flower with n petals.
+
+#     t: Turtle
+#     n: number of petals
+#     r: radius of the arcs
+#     angle: angle (degrees) that subtends the arcs
+#     """
+#     for i in range(n):
+#         petal(t, r, angle)
+#         t.lt(360.0/n)
+
+
+# def move(t, length):
+#     """Move Turtle (t) forward (length) units without leaving a trail.
+#     Leaves the pen down.
+#     """
+#     t.pu()
+#     t.fd(length)
+#     t.pd()
+
+
+# bob = turtle.Turtle()
+
+# # draw a sequence of three flowers, as shown in the book.
+# move(bob, -100)
+# flower(bob, 7, 60.0, 60.0)
+
+# move(bob, 100)
+# flower(bob, 10, 40.0, 80.0)
+
+# move(bob, 100)
+# flower(bob, 20, 140.0, 20.0)
+
+# bob.hideturtle()
+# turtle.mainloop()
+
+
+# Write an appropriately general set of functions that can draw shapes as in igure 4.2.
+"""This module contains a code example related to 
 Think Python, 2nd Edition
 by Allen Downey
 http://thinkpython2.com
@@ -44,59 +112,69 @@ License: http://creativecommons.org/licenses/by/4.0/
 
 from __future__ import print_function, division
 
+import math
 import turtle
 
-from polygon import arc
 
-
-def petal(t, r, angle):
-    """Draws a petal using two arcs.
+def draw_pie(t, n, r):
+    """Draws a pie, then moves into position to the right.
 
     t: Turtle
-    r: radius of the arcs
-    angle: angle (degrees) that subtends the arcs
+    n: number of segments
+    r: length of the radial spokes
     """
-    for i in range(2):
-        arc(t, r, angle)
-        t.lt(180-angle)
-
-
-def flower(t, n, r, angle):
-    """Draws a flower with n petals.
-
-    t: Turtle
-    n: number of petals
-    r: radius of the arcs
-    angle: angle (degrees) that subtends the arcs
-    """
-    for i in range(n):
-        petal(t, r, angle)
-        t.lt(360.0/n)
-
-
-def move(t, length):
-    """Move Turtle (t) forward (length) units without leaving a trail.
-    Leaves the pen down.
-    """
+    polypie(t, n, r)
     t.pu()
-    t.fd(length)
+    t.fd(r*2 + 10)
     t.pd()
+
+
+def polypie(t, n, r):
+    """Draws a pie divided into radial segments.
+
+    t: Turtle
+    n: number of segments
+    r: length of the radial spokes
+    """
+    angle = 360.0 / n
+    for i in range(n):
+        isosceles(t, r, angle/2)
+        t.lt(angle)
+
+
+def isosceles(t, r, angle):
+    """Draws an icosceles triangle.
+
+    The turtle starts and ends at the peak, facing the middle of the base.
+
+    t: Turtle
+    r: length of the equal legs
+    angle: half peak angle in degrees
+    """
+    y = r * math.sin(angle * math.pi / 180)
+
+    t.rt(angle)
+    t.fd(r)
+    t.lt(90+angle)
+    t.fd(2*y)
+    t.lt(90+angle)
+    t.fd(r)
+    t.lt(180-angle)
 
 
 bob = turtle.Turtle()
 
-# draw a sequence of three flowers, as shown in the book.
-move(bob, -100)
-flower(bob, 7, 60.0, 60.0)
+bob.pu()
+bob.bk(130)
+bob.pd()
 
-move(bob, 100)
-flower(bob, 10, 40.0, 80.0)
-
-move(bob, 100)
-flower(bob, 20, 140.0, 20.0)
+# draw poly-pies with various number of sides
+size = 40
+draw_pie(bob, 5, size)
+draw_pie(bob, 6, size)
+draw_pie(bob, 7, size)
+draw_pie(bob, 8, size)
 
 bob.hideturtle()
 turtle.mainloop()
-
-
 
