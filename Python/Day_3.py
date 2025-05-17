@@ -100,7 +100,86 @@
 
 
 # Write an appropriately general set of functions that can draw shapes as in igure 4.2.
-"""This module contains a code example related to 
+# """This module contains a code example related to 
+# Think Python, 2nd Edition
+# by Allen Downey
+# http://thinkpython2.com
+
+# Copyright 2015 Allen Downey
+
+# License: http://creativecommons.org/licenses/by/4.0/
+# """
+
+# from __future__ import print_function, division
+
+# import math
+# import turtle
+
+
+# def draw_pie(t, n, r):
+#     """Draws a pie, then moves into position to the right.
+
+#     t: Turtle
+#     n: number of segments
+#     r: length of the radial spokes
+#     """
+#     polypie(t, n, r)
+#     t.pu()
+#     t.fd(r*2 + 10)
+#     t.pd()
+
+
+# def polypie(t, n, r):
+#     """Draws a pie divided into radial segments.
+
+#     t: Turtle
+#     n: number of segments
+#     r: length of the radial spokes
+#     """
+#     angle = 360.0 / n
+#     for i in range(n):
+#         isosceles(t, r, angle/2)
+#         t.lt(angle)
+
+
+# def isosceles(t, r, angle):
+#     """Draws an icosceles triangle.
+
+#     The turtle starts and ends at the peak, facing the middle of the base.
+
+#     t: Turtle
+#     r: length of the equal legs
+#     angle: half peak angle in degrees
+#     """
+#     y = r * math.sin(angle * math.pi / 180)
+
+#     t.rt(angle)
+#     t.fd(r)
+#     t.lt(90+angle)
+#     t.fd(2*y)
+#     t.lt(90+angle)
+#     t.fd(r)
+#     t.lt(180-angle)
+
+
+# bob = turtle.Turtle()
+
+# bob.pu()
+# bob.bk(130)
+# bob.pd()
+
+# # draw poly-pies with various number of sides
+# size = 40
+# draw_pie(bob, 5, size)
+# draw_pie(bob, 6, size)
+# draw_pie(bob, 7, size)
+# draw_pie(bob, 8, size)
+
+# bob.hideturtle()
+# turtle.mainloop()
+
+"""This module contains a code example related to
+
 Think Python, 2nd Edition
 by Allen Downey
 http://thinkpython2.com
@@ -112,69 +191,99 @@ License: http://creativecommons.org/licenses/by/4.0/
 
 from __future__ import print_function, division
 
-import math
+import string
 import turtle
 
+"""
+To use this typewriter, you have to provide a module named letters.py
+that contains functions with names like draw_a, draw_b, etc.
+"""
 
-def draw_pie(t, n, r):
-    """Draws a pie, then moves into position to the right.
+# check if the reader has provided letters.py
+try:
+    import letters
+except ImportError as e:
+    message = e.args[0]
+    if message.startswith('No module'):
+        raise ImportError(message + 
+                          '\nYou have to provide a module named letters.py')
+
+
+def teleport(t, x, y):
+    """Moves the turtle without drawing a line.
+
+    Postcondition: pen is down
 
     t: Turtle
-    n: number of segments
-    r: length of the radial spokes
+    x: coordinate
+    y: coordinate
     """
-    polypie(t, n, r)
     t.pu()
-    t.fd(r*2 + 10)
+    t.goto(x, y)
     t.pd()
 
 
-def polypie(t, n, r):
-    """Draws a pie divided into radial segments.
+def keypress(char):
+    """Handles the event when a user presses a key.
 
-    t: Turtle
-    n: number of segments
-    r: length of the radial spokes
+    Checks if there is a function with the right name; otherwise
+    it prints an error message.
+
+    char: string, letter to draw
     """
-    angle = 360.0 / n
-    for i in range(n):
-        isosceles(t, r, angle/2)
-        t.lt(angle)
+    # if we're still drawing the previous letter, bail out
+    if bob.busy:
+        return
+    else:
+        bob.busy = True
+
+    # figure out which function to call, and call it
+    try:
+        name = 'draw_' + char
+        func = getattr(letters, name)
+    except AttributeError:
+        print("I don't know how to draw an", char)
+        bob.busy = False
+        return
+
+    func(bob)
+
+    letters.skip(bob, size/2)
+    bob.busy = False
 
 
-def isosceles(t, r, angle):
-    """Draws an icosceles triangle.
-
-    The turtle starts and ends at the peak, facing the middle of the base.
-
-    t: Turtle
-    r: length of the equal legs
-    angle: half peak angle in degrees
+def carriage_return():
+    """Moves to the beginning of the next line.
     """
-    y = r * math.sin(angle * math.pi / 180)
-
-    t.rt(angle)
-    t.fd(r)
-    t.lt(90+angle)
-    t.fd(2*y)
-    t.lt(90+angle)
-    t.fd(r)
-    t.lt(180-angle)
+    teleport(bob, -180, bob.ycor() - size*3)
+    bob.busy = False
 
 
+def presser(char):
+    """Returns a function object that executes keypress.
+
+    char: character to draw when the function is executed
+
+    returns: function with no arguments
+    """
+    def func():
+        keypress(char)
+    return func
+
+
+# create and position the turtle
+size = 20
 bob = turtle.Turtle()
+bob.busy = False
+teleport(bob, -180, 150)
 
-bob.pu()
-bob.bk(130)
-bob.pd()
+# tell world to call keypress when the user presses a key
+screen = bob.getscreen()
 
-# draw poly-pies with various number of sides
-size = 40
-draw_pie(bob, 5, size)
-draw_pie(bob, 6, size)
-draw_pie(bob, 7, size)
-draw_pie(bob, 8, size)
+for char in string.ascii_lowercase:
+    screen.onkey(presser(char), char)
 
-bob.hideturtle()
+screen.onkey(carriage_return, 'Return')
+
+screen.listen()
 turtle.mainloop()
-
