@@ -119,7 +119,7 @@
 
 #find the output of the following program
 # def recurse(n, s):
-    """
+"""
     Recursively computes the sum of integers from n down to 1, added to an initial value s,
     and prints the final result when n reaches 0.
 
@@ -136,7 +136,7 @@
 
     Note:
         This function uses recursion and does not return a value; it prints the result instead.
-    """
+"""
 # def recurse(n, s):
 #     if n == 0:
 #         print(s)
