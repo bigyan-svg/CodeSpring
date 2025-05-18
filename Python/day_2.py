@@ -1,12 +1,12 @@
-# import turtle
-# t= turtle.Turtle()
-# list_of_colors = ["purple", "red", "orange", "blue", "green"]
-# for i in range(500):
-#     t.color(list_of_colors[i%5])
-#     t.pensize(i/10+1)
-#     t.fd(i)
-#     t.lt(59)
-# turtle.mainloop()
+import turtle
+t= turtle.Turtle()
+list_of_colors = ["purple", "red", "orange", "blue", "green"]
+for i in range(500):
+    t.color(list_of_colors[i%5])
+    t.pensize(i/10+1)
+    t.fd(i)
+    t.lt(59)
+turtle.mainloop()
 
 # 5.Make a more general version of circle called arc that takes an additional parameter
 #  angle, which determines what fraction of a circle to draw. angle is in units of degrees,

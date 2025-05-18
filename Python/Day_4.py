@@ -26,6 +26,9 @@
 
 # #Recursion
 # # program to calculate the factorial of a given number
+# x=10
+# y=20
+# print(x,y)
 # n = 10
 # def factorial(n):
 #     if n==0:
@@ -115,7 +118,7 @@
 # is_Triangle()
 
 #find the output of the following program
-def recurse(n, s):
+# def recurse(n, s):
     """
     Recursively computes the sum of integers from n down to 1, added to an initial value s,
     and prints the final result when n reaches 0.
@@ -148,21 +151,21 @@ def recurse(n, s):
 
 
 # Koch Curve
-import turtle
-bob = turtle.Turtle()
-bob.pu()
-bob.goto(0,-400)
-bob.pd()
-def draw(t, length, n):
-    if n==0:
-        return
-    angle = 50
-    t.fd(length*n)
-    t.lt(angle)
-    draw(t, length, n-1)
-    t.rt(2*angle)
-    draw(t,length, n-1)
-    t.lt(angle)
-    t.bk(length*n)
-draw(bob, 10, 10)
-turtle.mainloop()
+# import turtle
+# bob = turtle.Turtle()
+# bob.pu()
+# bob.goto(0,-400)
+# bob.pd()
+# def draw(t, length, n):
+#     if n==0:
+#         return
+#     angle = 50
+#     t.fd(length*n)
+#     t.lt(angle)
+#     draw(t, length, n-1)
+#     t.rt(2*angle)
+#     draw(t,length, n-1)
+#     t.lt(angle)
+#     t.bk(length*n)
+# draw(bob, 10, 10)
+# turtle.mainloop()
