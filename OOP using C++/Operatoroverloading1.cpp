@@ -3,20 +3,21 @@
 #include <iostream>
 using namespace std;
 
-class Complex {
+class Complex 
+{
 private:
     float real;
     float imag;
 
 public:
     // Constructor
-    Complex(float r = 0, float i = 0) {
+    Complex(int r = 0, int i = 0) {
         real = r;
         imag = i;
     }
 
     // Overload + operator
-    Complex operator + (const Complex& obj) 
+    Complex operator + (Complex& obj) 
     {
         Complex temp;
         temp.real = real + obj.real;
@@ -25,7 +26,7 @@ public:
     }
 
     // Overload - operator
-    Complex operator - (const Complex& obj) {
+    Complex operator - (Complex& obj) {
         Complex temp;
         temp.real = real - obj.real;
         temp.imag = imag - obj.imag;
@@ -39,7 +40,8 @@ public:
 };
 
 // Main function
-int main() {
+int main() 
+{
     Complex c1(4, 6);
     Complex c2(2, 1);
     Complex c3;
