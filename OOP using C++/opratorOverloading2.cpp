@@ -19,7 +19,8 @@ public:
         return *this; // Return the current object
     }
 
-    void display() const {
+    void display() 
+    {
         cout << "Height after addition: " << feet << " feet " << inches << " inches" << endl;
     }
 };

@@ -3,7 +3,7 @@
 using namespace std;
 class Time
 {
-    public:
+    private:
         int hr;
         int min;
     public:
