@@ -10,8 +10,13 @@ private:
     float imag;
 
 public:
-    // Constructor
-    Complex(int r = 0, int i = 0) {
+    Complex()
+    {
+        real = 0;
+        imag = 0;
+    }
+    Complex(int r , int i ) 
+    {
         real = r;
         imag = i;
     }
