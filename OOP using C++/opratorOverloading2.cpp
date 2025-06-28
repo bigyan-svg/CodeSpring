@@ -12,7 +12,8 @@ public:
         inches = i;
     }
 
-    Height& operator += ( Height& obj) {
+    Height& operator += ( Height& obj) 
+    {
         inches += obj.inches;
         feet += obj.feet + (inches / 12); // Convert inches to feet
         inches %= 12; // Keep inches in 0–11
